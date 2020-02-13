@@ -1,0 +1,843 @@
+formgroup {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray-medium;
+  margin: 24px;
+  width: calc(100% - 60px);
+  max-width: 1120px;
+  border-radius: 5px;
+  padding-bottom: 19px;
+  background: white;
+
+  &.addbottom {
+    padding-bottom: 40px;
+  }
+  
+  &.form-double-wider {
+    flex: 2 1 680px;
+    margin-right: 40px;
+  }
+  
+  &.form-double-smaller {
+    flex: 0 1 406px;
+    margin-left: 0;
+
+    formrow {
+      padding: 0px 23px 0;
+    }
+  }
+}
+
+.form-double {
+  display: flex;
+  padding: 0;
+  align-items: stretch;
+  width: calc(100% - 14px);
+  max-width: 1170px;
+}
+
+formtitle {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $gray-medium;
+  padding: 24px 32px;
+  margin-bottom: 16px;
+
+  &.van-nospace {
+    margin-bottom: 0;
+  }
+  
+  p {
+    margin-top: 10px;
+  }
+}
+
+formtabs {
+  display: flex;
+  border-bottom: 1px solid $gray-medium;
+  overflow: hidden;
+  padding: 0 16px;
+  
+  button {
+    border: none;
+    background: none;
+    width: 130px;
+    padding: 24px 16px 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 150%;
+    
+    &.active {
+      color: $blue;
+      font-weight: 600;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 9px;
+        right: 9px;
+        height: 6px;
+        border-radius: 10px;
+        background: $blue;
+      }
+    }
+  }
+}
+
+formrow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 32px 0px;
+
+  &.van-slim {
+    padding-top: 8px;
+  }
+  
+  &.van-rowentries {
+    padding-top: 0;
+    
+    formitem {
+      margin-top: 24px;
+    }
+  }
+}
+
+formitem {
+  display: flex;
+  flex-direction: column;
+  padding: 0 9px;
+  margin-top: 24px;
+  width: calc(100% / 3);
+  justify-content: flex-end;
+  transition: width 0.3s;
+
+  &.subitem {
+    width: calc((100% / 3) * 2);
+    margin: 18px 48px;
+    padding: 0;
+  }
+  
+  &.area {
+    width: calc((100% / 3) * 2);
+  }
+  
+  h5 {
+    margin-bottom: 8px;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 12px;
+    color: $gray-dark;
+    
+    &.error {
+      color: $red;
+      margin-top: 12px;
+      margin-bottom: 0;
+      height: 13px;
+    }
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    margin-top: 16px;
+    outline:none;
+  }
+  
+  input[type=text] {
+    padding: 12px 12px 12px 24px;
+    border: 1px solid $gray-faded;
+    border-radius: 5px;
+    font-size: 16px;
+
+    &:not(:placeholder-shown) {
+      border-color: $gray-dark;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $blue;
+    }
+
+    &:read-only {
+      background: $gray;
+      border: none;
+      color: $gray-dark;
+    }
+
+    &:-moz-read-only {
+      background: $gray;
+      border: 1px solid $gray;
+      color: $gray-dark;
+
+      &:focus {
+        border-color: $gray-dark;
+      }
+    }
+
+    &.valid {
+      background: url('imgs/icon-valid.svg') right center no-repeat;
+      background-size: 24px auto;
+      background-position: right 16px center;
+      padding-right: 46px;
+    }
+
+    &.error {
+      background: url('imgs/icon-alert.svg') right center no-repeat;
+      background-size: 24px auto;
+      background-position: right 16px center;
+      padding-right: 46px;
+    }
+  }
+  
+  textarea {
+    height: 150px;
+    border: 1px solid $gray-faded;
+    border-radius: 5px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    
+    &:not(:placeholder-shown) {
+      border-color: $gray-dark;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $blue;
+    }
+  }
+}
+
+.van-files {
+  width: 100%;
+}
+
+filelist {
+  display: flex;
+  flex-direction: column;
+  padding: 13px 40px 0 120px;
+  
+  fileinfo,
+  filerequest {
+    display: flex;
+    flex-direction: column;
+    padding: 13px 0 24px;
+    
+    h4 {
+      background: url('imgs/file-icon.svg') left center no-repeat transparent;
+      padding: 0 34px;
+      margin-bottom: 11px;
+      display: flex;
+      align-items: center;
+      
+      span {
+        display: block;
+        margin-left: 16px;
+        font-size: 12px;
+        flex-grow: 2;
+        font-weight: 500;
+        font-style: normal;
+      }
+    }
+  }
+
+  filerequest {
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 0 15px;
+    
+    h5 {
+      flex: 2 0 450px;
+      margin: 0;
+    }
+  }
+  
+  filetag {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 150%;
+    background: rgba(0, 97, 255, 0.1);
+    color: $blue;
+    border-radius: 10px;
+    padding: 2px 8px 4px;
+
+    &.second {
+      display: none;
+    }
+  }
+  
+  fileupload {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px dashed $gray-medium;
+    font-size: 16px;
+    line-height: 150%;
+    color: $blue;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 600;
+    padding: 15px 24px;
+    position: relative;
+    flex: 2 1 100%;
+    max-width: 344px;
+    background: url('imgs/icon-upload.svg') right center no-repeat;
+    background-position: right 24px top 20px;
+    background-size: 16px 16px;
+    border-radius: 5px;
+    
+    &:hover {
+      border-color: $blue;
+    }
+    
+    button {
+      background: transparent;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: 44px;
+      width: 55px;
+      opacity: 0.5;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      display: none;
+    }
+
+    input {
+      position: absolute;
+      color: transparent;
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      opacity: 0.01;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: pointer;
+    }
+    
+    &.van-uploaded {
+      color: $black;
+      font-weight: normal;
+      background-image: url('imgs/file-success.svg');
+      
+      &:hover {
+        background-image: url('imgs/file-remove.svg');
+      }
+      
+      input {
+        display: none;
+      }
+      
+      button {
+        display: block;
+      }
+    }
+  }
+}
+
+.van-additem {
+  width: 100%;
+  border: 1px dashed $gray-medium;
+  border-radius: 5px;
+  background: transparent;
+  margin: 0 10px;
+  padding: 16px;
+  margin-top: 32px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $blue;
+  }
+  
+  span {
+    color: $blue;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 37px;
+    background: url('imgs/icon-plus.svg') left center no-repeat;
+    background-size: 15px 15px;
+  }
+}
+
+.van-paymentinfo {
+  width: 100%;
+}
+
+.van-paymentdate {
+  width: calc(100% - 140px);
+}
+
+.van-paymentcc {
+  width: 138px;
+}
+
+.van-rowinfo,
+.van-rowtotal {
+  padding-top: 24px;
+
+  formitem {
+    width: 100%;
+    padding-bottom: 10px;
+    flex-direction: row;
+    margin-top: 0px;
+    justify-content: space-between;
+    
+    span {
+      font-style: normal;
+      display: block;
+      width: 90px;
+      text-align: right;
+    }
+    
+    p {
+      padding-right: 16px;
+    }
+  }
+}
+
+.van-rowtotal {
+  margin: 24px 32px 0;
+  border-top: 1px solid $gray-dark;
+  padding: 24px 0 10px;
+}
+
+.van-completed {
+  padding: 24px 0px 24px;
+  
+  h3 {
+    position: relative;
+  }
+  
+  h3:after {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    right: -45px;
+    top: 50%;
+    margin-top: -14px;
+    border-radius: 20px;
+    background-color: $blue;
+    background-image: url('imgs/progress-done.svg');
+    background-position: center;
+    background-size: 10px auto;
+    background-repeat: no-repeat;
+  }
+  
+  p {
+    padding: 16px 32px 0;
+  }
+  
+  formrow {
+    align-items: center;
+
+    p {
+      padding: 0;
+    }
+  }
+}
+
+.van-completednumber {
+  padding: 0;
+  flex: 2 0 auto;
+  text-align: right;
+  span {
+    font-weight: 600;
+  }
+
+  &.second {
+    display: none;
+    text-align: left;
+  }
+}
+
+.van-radios {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  
+  h5 {
+    width: 100%;
+  }
+  
+  label {
+    margin-top: 16px;
+    width: calc((100% - 32px) / 3);
+    margin-left: 16px;
+    display: flex;
+    position: relative;
+    padding: 16px 16px 16px 66px;
+    border: 1px solid $gray-medium;
+    border-radius: 5px;
+    font-weight: normal;
+    box-sizing: border-box;
+    transition: width 0.3s;
+
+    &:hover,
+    &:focus {
+      border-color: $blue-hover !important;
+      outline: none !important;
+    }
+
+    &:focus {
+      border-width: 2px;
+    }
+    
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    span {
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      background: url('imgs/radio_unchecked.svg') center no-repeat;
+      background-size: contain;
+      margin: 0;
+      left: 24px;
+      top: 19px;
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+    &:checked + label {
+      border-color: $blue;
+      box-shadow: 0px 4px 30px rgba(0, 0, 60, 0.05);
+
+      span {
+        background-image: url('imgs/radio_checked.svg');
+      }
+    }
+  }
+
+  span.error {
+    width: 100%;
+  }
+}
+
+.van-checks {
+  width: 100%;
+  justify-content: flex-start;
+
+  span.van-subtitle {
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: flex;
+    position: relative;
+    padding: 16px 0px 16px 48px;
+    font-weight: normal;
+
+    span {
+      box-sizing: border-box;
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      margin: 0;
+      border: 1px solid $gray-medium;
+      background: transparent;
+      border-radius: 5px;
+      left: 0px;
+      top: 16px;
+    }
+
+    &:hover span,
+    &:focus span {
+      border-color: $blue-hover !important;
+      outline: none !important;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+
+    &:focus span {
+      border: 2px solid $blue-hover important;
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+    &:checked + label {
+      span {
+        border: none;
+        background: url('imgs/icon-checkfull.svg') center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+table.van-resultinfo {
+  width: 66%;
+  margin: 24px 32px;
+
+  colgroup {
+    col.name {
+      width: 250px;
+    }
+    col.value {
+      width: 100%;
+    }
+  }
+  
+  td {
+    padding: 12px 24px;
+  }
+  
+  tr:nth-child(odd) {
+    td {
+      border-radius: 5px 0 0 5px;
+      background: $gray-rowtable;
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+}
+
+.van-noentries {
+  text-align: center;
+  font-size: 16px;
+  padding: 65px 0;
+}
+
+.van-mobilefiller {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  filelist {
+    filerequest {
+      flex-direction: column;
+      align-items: stretch;
+
+      h5 {
+        flex: 2 1 auto;
+      }
+    }
+    
+    fileupload {
+      max-width: unset;
+      margin-top: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  formgroup {
+    margin: 24px;
+    width: calc(100% - 48px);
+  }
+
+  formtitle {
+    padding: 24px 16px;
+  }
+  
+  .form-double {
+    flex-direction: column;
+    width: 100%;
+    
+    .form-double-wider,
+    .form-double-smaller {
+      flex: 2 1 auto;
+      margin-left: 24px;
+      justify-content: flex-start;
+    }
+  }
+
+  .van-completednumber.first {
+    display: none;
+  }
+  
+  .van-completednumber.second {
+    display: block;
+  }
+  
+  .van-rowtotal {
+    margin: 0px 16px 0;
+    
+    formitem {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  formrow,
+  formgroup.form-double-smaller formrow {
+    padding: 0px 7px 0px;
+  }
+  
+  .van-completed {
+    padding: 24px 7px 24px;
+    
+    p {
+      padding: 16px 9px 0;
+    }
+  }
+  
+  .van-paymentdouble {
+    width: calc(50% + 9px);
+  }
+
+  formitem {
+    width: 50%;
+
+    &.subitem {
+      width: calc(100% - 48px);
+    }
+
+    &.area {
+      width: 100%;
+    }
+  }
+  
+  .van-paymentinfo {
+    width: 50%;
+  }
+  
+  filelist {
+    padding: 13px 16px 0 90px;
+  }
+  
+  .van-radios label {
+    width: calc((100% - 16px) / 2);
+  }
+  
+  table.van-resultinfo {
+    width: calc(100% - 32px);
+    margin: 24px 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  formgroup {
+    margin: 12px;
+    width: calc(100% - 24px);
+  }
+
+  formtitle {
+    padding: 24px 12px;
+  }
+
+  .van-mobilefiller {
+    display: block;
+    flex-grow: 2;
+  }
+  
+  .form-double .form-double-wider
+  .form-double .form-double-smaller {
+    margin-left: 12px;
+  }
+  
+  .van-rowtotal {
+    margin: 0px 12px 0;
+  }
+
+  formitem {
+    width: 100%;
+
+    &.subitem {
+      width: calc(100% - 48px);
+    }
+
+    &.area {
+      width: 100%;
+    }
+  }
+  
+  .form-double {
+    .form-double-wider,
+    .form-double-smaller {
+      margin-left: 12px;
+      justify-content: flex-start;
+    }
+  }
+  
+  .van-paymentinfo {
+    width: 100%;
+  }
+  
+  .van-paymentdouble {
+    width: 100%;
+  }
+  
+  filelist {
+    padding: 13px 0px 0 0px;
+    
+    fileinfo h4 {
+      flex-direction: column;
+      align-items: flex-start;
+      background-size: auto 35px;
+      padding-left: 46px;
+      
+      span {
+        margin-left: 0;
+      }
+
+      filetag {
+        display: none;
+      }
+    }
+
+    filetag.second {
+      display: block;
+      align-self: flex-start;
+      margin-top: 16px;
+    }
+  }
+
+  helpcontainer button {
+    height: 20px;
+    background-position: right center;
+  }
+  
+  .van-radios label {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  table.van-resultinfo {
+    width: calc(100% - 24px);
+    margin: 24px 12px;
+
+    td {
+      padding: 12px;
+    }
+  }
+}
