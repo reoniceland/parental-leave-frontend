@@ -1,0 +1,27 @@
+.react-calendar {
+  &__tile {
+    color: black;
+
+    &--active {
+      color: black;
+      background: #E6E6EC;
+    }
+
+    &--rangeStart,
+    &--rangeEnd {
+      color: white;
+      background: #0061FF;
+      border-radius: 6px;
+    }
+  }
+
+  &__month-view {
+    &__weekdays {
+      color: #0061FF;
+
+      abbr[title] {
+        text-decoration: none;
+      }
+    }
+  }
+}

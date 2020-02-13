@@ -1,0 +1,11 @@
+.date-input {
+  background: #FFFFFF;
+  border: 1px solid #E6E6EC;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 12px 24px;
+
+  &:focus {
+    border-radius: 5px;
+  }
+}
