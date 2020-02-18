@@ -1,11 +1,13 @@
 import React from 'react'
 import Calendar, { OnChangeDateCallback } from 'react-calendar'
+import { format } from 'date-fns'
+import isLocale from 'date-fns/locale/is'
 
 import './calendar.scss'
 
 interface Props {
-  value: Date | Date[] | undefined
-  onChange: OnChangeDateCallback | undefined
+  value?: Date | Date[]
+  onChange?: OnChangeDateCallback
 }
 export default function DateRangePicker({
   value,
@@ -16,6 +18,11 @@ export default function DateRangePicker({
       value={value}
       onChange={onChange}
       selectRange
+      minDate={new Date()}
+      formatMonthYear={(_, date) =>
+        format(date, 'LLLL yyyy', { locale: isLocale })
+      }
+      formatShortWeekday={(_, date) => format(date, 'iii', { locale: isLocale })}
     />
   )
 }

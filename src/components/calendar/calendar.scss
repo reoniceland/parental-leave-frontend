@@ -24,4 +24,11 @@
       }
     }
   }
+
+  &__navigation {
+    &__label {
+      font-weight: 800;
+      text-transform: capitalize;
+    }
+  }
 }

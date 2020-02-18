@@ -1,11 +1,22 @@
 .date-input {
-  background: #FFFFFF;
+  position: relative;
+  padding: 12px 60px 12px 24px;
+  margin-bottom: 16px;
   border: 1px solid #E6E6EC;
-  box-sizing: border-box;
   border-radius: 5px;
-  padding: 12px 24px;
 
   &:focus {
     border-radius: 5px;
+  }
+
+  &__calendar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+
+    &--show {
+      height: auto;
+    }
   }
 }
