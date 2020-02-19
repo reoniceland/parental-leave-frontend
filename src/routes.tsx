@@ -9,7 +9,7 @@ import NavHeader from './components/navigation/NavHeader'
 import Progressbar from './components/navigation/Progressbar'
 
 
-const App = () => {
+const Routes = () => {
   return (
     <div className="App">
       <Router>
@@ -22,7 +22,7 @@ const App = () => {
         </Switch>
       </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Routes;

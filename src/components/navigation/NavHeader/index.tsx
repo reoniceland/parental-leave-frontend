@@ -1,11 +1,23 @@
 import React from 'react'
+import { useQuery } from 'react-apollo'
+import { gql } from 'apollo-boost'
 
 import Container from '../../common/Container'
 
 import './styles.scss'
 
-export default function NavHeader() {
+const PERSON = gql`
+{
+  person(kennitala: "0000") {
+    name
+    address
+    can_calculate
+  }
+}`
 
+export default function NavHeader() {
+  const { data } = useQuery(PERSON)
+  console.log(data)
   return (
     <div className="nav-header">
       <Container>
