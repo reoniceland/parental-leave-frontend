@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export default function({
+export default function Button({
   onClick,
   children,
 }: Props) {
