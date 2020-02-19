@@ -1,0 +1,94 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    margin: 100px auto 40px;
+
+    h1, p {
+      text-align: center;
+      max-width: 600px;
+      margin-top: 28px;
+    }
+  }
+}
+
+.progressbar {
+  display: flex;
+  align-self: center;
+  width: calc(100% - 112px);
+  max-width: 724px;
+  align-content: center;
+  margin-top: 38px;
+  margin-bottom: 88px;
+
+  &__group {
+    flex: 2 1 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    span {
+      width: 8px;
+      height: 8px;
+      display: block;
+      background: $gray;
+      border-radius: 8px;
+    }
+
+    &.active span {
+      background: $blue;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+
+    h4 {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background: $gray;
+      color: $gray-dark;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.active h4 {
+      background: #0061FF;
+      color: white;
+    }
+
+    &.active h6 {
+      color: $black;
+    }
+
+    &.done h4 {
+      text-indent: -9999px;
+    }
+
+    &.done h4:after {
+      content: '';
+      width: 17px;
+      height: 12px;
+      // background: url('imgs/progress-done.svg') center no-repeat;
+      background-size: contain;
+      display: block;
+    }
+
+    h6 {
+      position: absolute;
+      top: 64px;
+      width: 100px;
+      text-align: center;
+      margin-left: -25px;
+      color: $gray-dark;
+    }
+  }
+}

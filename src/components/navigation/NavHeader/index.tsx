@@ -1,6 +1,8 @@
 import React from 'react'
-import Container from '../common/Container'
-import './NavHeader.scss'
+
+import Container from '../../common/Container'
+
+import './styles.scss'
 
 export default function NavHeader() {
 

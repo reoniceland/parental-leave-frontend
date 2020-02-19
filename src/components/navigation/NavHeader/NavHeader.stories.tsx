@@ -1,5 +1,5 @@
 import React from 'react'
-import NavHeader from './NavHeader'
+import NavHeader from '.'
 
 export default {
   title: 'NavHeader',

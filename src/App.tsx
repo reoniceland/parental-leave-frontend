@@ -1,16 +1,26 @@
 import React from 'react'
-import NavHeader from './components/navigation/NavHeader'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom'
 
-import './scss/App.scss'
-import Container from './components/common/Container'
+import NavHeader from './components/navigation/NavHeader'
+import Progressbar from './components/navigation/Progressbar'
+
 
 const App = () => {
   return (
     <div className="App">
-      <NavHeader />
-      <Container>
-        <div>bleh</div>
-      </Container>
+      <Router>
+        <NavHeader />
+
+        <Switch>
+          <Route path="/">
+            <Progressbar />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
