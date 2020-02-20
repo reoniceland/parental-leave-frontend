@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import './scss/global.scss';
 
 const client = new ApolloClient({
-  uri: 'http://178.62.70.88:4000/',
+  uri: 'https://self-service-backend.reoncloud.com/',
 });
 
 const App = (
