@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { gql } from 'apollo-boost'
 import { useFormik } from 'formik'
 import { useLazyQuery } from 'react-apollo'
+import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
 import Button from '../common/Button'
 import Container from '../common/Container'
 import InputField from '../form/InputField'
 import FormCard from '../form/FormContainer'
-import { Redirect } from 'react-router-dom'
 
 const PERSON = gql`
 query Person($kennitala: String!) {
@@ -20,7 +20,7 @@ query Person($kennitala: String!) {
 }`
 
 export default function Login() {
-  const [redirect, setRedirect] = useState(false)
+  const history = useHistory()
   const [getPerson, { data }] = useLazyQuery(PERSON)
 
   const initialValues = {
@@ -32,15 +32,9 @@ export default function Login() {
     onSubmit: async (values) => {
       await getPerson({ variables: { kennitala: values.kennitala }})
       console.log(data)
-      setRedirect(true)
+      history.push('/step1')
     },
   })
-
-  if (redirect) {
-    return (
-      <Redirect to="/step1" />
-    )
-  }
 
   return (
     <Container>

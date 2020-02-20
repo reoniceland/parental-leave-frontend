@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
+import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
+import Button from '../common/Button'
 import Container from '../common/Container'
 import FormCard from '../form/FormContainer'
 import SelectField from '../form/SelectField'
-import Button from '../common/Button'
-import { Redirect } from 'react-router-dom'
 
 const availMonths = [
   {value: 1, text: "1 mánuður"},
@@ -24,7 +24,7 @@ const availMonths = [
 ]
 
 export default function Months() {
-  const [redirect, setRedirect] = useState(false)
+  const history = useHistory()
   const initialValues = {
     months: 1,
   }
@@ -33,15 +33,9 @@ export default function Months() {
     initialValues,
     onSubmit: async (values) => {
       console.log(values)
-      setRedirect(true)
+      history.push('/step2')
     },
   })
-
-  if (redirect) {
-    return (
-      <Redirect to="/step2" />
-    )
-  }
 
   return (
     <Container>

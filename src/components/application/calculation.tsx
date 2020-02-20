@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
+import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
 import Button from '../common/Button'
 import Container from '../common/Container'
 import FormCard from '../form/FormContainer'
-import { Redirect } from 'react-router-dom'
 
 
 export default function Calculation() {
-  const [redirect, setRedirect] = useState(false)
+  const history = useHistory()
   const initialValues = {
     months: 1,
   }
@@ -18,15 +18,9 @@ export default function Calculation() {
     initialValues,
     onSubmit: async (values) => {
       console.log(values)
-      setRedirect(true)
+      history.push('/step3')
     },
   })
-
-  if (redirect) {
-    return (
-      <Redirect to="/step3" />
-    )
-  }
 
   return (
     <Container>
