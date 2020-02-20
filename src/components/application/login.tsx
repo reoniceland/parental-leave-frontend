@@ -1,7 +1,5 @@
-import React from 'react'
-import { gql } from 'apollo-boost'
+import React, { useContext } from 'react'
 import { useFormik } from 'formik'
-import { useLazyQuery } from 'react-apollo'
 import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
@@ -9,20 +7,12 @@ import Button from '../common/Button'
 import InputField from '../form/InputField'
 import FormCard from '../form/FormContainer'
 import Progressbar from '../navigation/Progressbar'
+import { AppContext } from '../context/AppContext'
 
-const PERSON = gql`
-query Person($kennitala: String!) {
-  person(kennitala: "0000") {
-    name
-    address
-    can_calculate
-  }
-}`
+
 
 export default function Login() {
-  const history = useHistory()
-  const [getPerson, { data }] = useLazyQuery(PERSON)
-
+  const { getPerson, data } = useContext(AppContext)
   const initialValues = {
     kennitala: '0000',
   }
@@ -36,6 +26,10 @@ export default function Login() {
       history.push('/step1', {animation: 'forward'})
     },
   })
+
+  const history = useHistory()
+  
+ 
 
   return (
     <Progressbar current="/">

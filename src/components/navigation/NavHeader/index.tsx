@@ -17,7 +17,7 @@ const PERSON = gql`
 
 export default function NavHeader() {
   const { data } = useQuery(PERSON)
-  console.log(data)
+  //console.log(data)
   return (
     <div className="nav-header">
       <Container>

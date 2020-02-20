@@ -9,6 +9,7 @@ interface Props {
       value: number;
       text: string;
   }[]
+  onChange?: ((event: React.ChangeEvent<HTMLSelectElement>) => void) | undefined
   placeholder?: string
 }
 
@@ -16,6 +17,7 @@ export default function SelectField({
   name,
   label,
   options,
+  onChange,
   placeholder,
 }: Props) {
   return (
@@ -31,6 +33,7 @@ export default function SelectField({
         id={name}
         className="select-field__select"
         placeholder={placeholder}
+        onChange={onChange}
       >
         {options.map(option => (
           <option

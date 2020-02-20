@@ -4,6 +4,7 @@ import { ApolloProvider,  } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 import Routes from './routes';
 import * as serviceWorker from './serviceWorker';
+import AppContextProvider from './components/context/AppContext'
 
 import './scss/global.scss';
 
@@ -13,7 +14,10 @@ const client = new ApolloClient({
 
 const App = (
   <ApolloProvider client={client}>
-    <Routes />
+    <AppContextProvider>
+      <Routes />  
+    </AppContextProvider>
+    
   </ApolloProvider>
 )
 
