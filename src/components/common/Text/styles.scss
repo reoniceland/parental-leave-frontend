@@ -29,10 +29,6 @@
   &--h5 {
     font-size: $fontsize-h5-mobile;
     font-weight: 600;
-
-    &--withGutter {
-      margin-bottom: 18px;
-    }
   }
 
   &--h6 {
@@ -42,10 +38,6 @@
 
   &--p {
     font-size: $fontsize-p-mobile;
-  }
-
-  &--inverted {
-    color: $color-white;
   }
 
   @media(min-width: $size-tablet) {
@@ -67,10 +59,6 @@
 
     &--h5 {
       font-size: between($fontsize-h5-mobile, $fontsize-h5-desktop, $size-tablet, $size-desktop);
-
-      &--withGutter {
-        margin-bottom: between(18px, 20px, $size-tablet, $size-desktop);
-      }
     }
 
     &--h6 {
@@ -101,10 +89,6 @@
 
     &--h5 {
       font-size: $fontsize-h5-desktop;
-
-      &--withGutter {
-        margin-bottom: 20px;
-      }
     }
 
     &--h6 {

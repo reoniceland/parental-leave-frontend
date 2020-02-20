@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom'
 
+import Login from './components/application/login'
 import NavHeader from './components/navigation/NavHeader'
 import Progressbar from './components/navigation/Progressbar'
 
@@ -15,9 +16,15 @@ const Routes = () => {
       <Router>
         <NavHeader />
 
+        <Progressbar />
+
         <Switch>
           <Route path="/">
-            <Progressbar />
+            <Login />
+          </Route>
+
+          <Route path="/asda">
+            <div>Hellos</div>
           </Route>
         </Switch>
       </Router>

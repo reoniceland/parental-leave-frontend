@@ -13,7 +13,7 @@ export default function Container({
   children,
 }: Props) {
   return (
-    <div className={`container ${!!position && `container--${position}`}`}>
+    <div className={`custom-container ${!!position && `custom-container--${position}`}`}>
       {children}
     </div>
   )

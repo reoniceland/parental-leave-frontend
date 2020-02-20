@@ -7,13 +7,13 @@ import './styles.scss'
 export default function Progressbar() {
   return (
     <Container>
-      <div className="progress">
-        <div className="progress__header">
+      <div className="progressbar">
+        <div className="progressbar__header">
           <Text variant="h1">Umsókn um fæðingarorlof</Text>
           <Text variant="p">Foreldri skal sækja um greiðslur úr Fæðingarorlofssjóði sex vikum fyrir áætlaðan fæðingardag barns. Ef þú ert þegar búin að sækja um ferðu beint inn á mínar síður.</Text>
         </div>
 
-        <div className="progressbar">
+        <div className="progressbar__container">
           <div className="progressbar__item active">
             <h4>1</h4>
             <h6>Innsláttur</h6>

@@ -1,7 +1,7 @@
 @import 'src/scss/variables';
 @import 'src/scss/between';
 
-.progress {
+.progressbar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,16 +15,16 @@
       margin-top: 28px;
     }
   }
-}
 
-.progressbar {
-  display: flex;
-  align-self: center;
-  width: calc(100% - 112px);
-  max-width: 724px;
-  align-content: center;
-  margin-top: 38px;
-  margin-bottom: 88px;
+  &__container{
+    display: flex;
+    align-self: center;
+    width: calc(100% - 112px);
+    max-width: 724px;
+    align-content: center;
+    margin-top: 38px;
+    margin-bottom: 88px;
+  }
 
   &__group {
     flex: 2 1 auto;
@@ -77,7 +77,7 @@
       content: '';
       width: 17px;
       height: 12px;
-      // background: url('imgs/progress-done.svg') center no-repeat;
+      background: url('/static/imgs/progress-done.svg') center no-repeat;
       background-size: contain;
       display: block;
     }
