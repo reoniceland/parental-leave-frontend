@@ -7,11 +7,12 @@ import './styles.scss'
 
 
 interface Props {
-  onClick: () => void
+  onClick?: () => void
   variant?: "secondary" | "close" | "add" | "mini" | "icon"
   children: React.ReactNode
   disabled?: boolean
   icon?: IconName
+  type?: "submit"
 }
 
 export default function Button({
@@ -19,10 +20,10 @@ export default function Button({
   variant,
   children,
   icon,
-  ...props
+  type,
 }: Props) {
   return (
-    <button onClick={onClick} className={`button button--${variant}`} {...props}>
+    <button onClick={onClick} className={`button button--${variant}`} type={type}>
       {children}
       {variant === "close" && (
         <div className="button--close__icon">

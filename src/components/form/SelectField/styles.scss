@@ -1,0 +1,32 @@
+@import 'src/scss/variables';
+@import 'src/scss/between';
+
+.select-field {
+  &__label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: $color-dark-100;
+    padding-bottom: 24px;
+  }
+
+  select {
+    color:$color-dark-50;
+    padding: 12px 24px;
+    border: 1px solid $color-dark-10;
+    border-radius: 5px;
+    min-width: 300px;
+
+    &:disabled {
+      background: #F2F2F5;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 3px 0px rgba(#0061FF, 0.5);
+    }
+  }
+}

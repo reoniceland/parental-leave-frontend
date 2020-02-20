@@ -79,3 +79,8 @@ h1 {
 input, textarea, button {
   font-family: 'IBM Plex Sans', sans-serif;
 }
+
+form {
+  max-width: 1024px;
+  margin: auto;
+}
