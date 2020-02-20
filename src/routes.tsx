@@ -9,7 +9,6 @@ import Login from './components/application/login'
 import Months from './components/application/months'
 import Payment from './components/application/payment'
 import NavHeader from './components/navigation/NavHeader'
-import Progressbar from './components/navigation/Progressbar'
 import Calculation from './components/application/calculation'
 
 
@@ -18,8 +17,6 @@ const Routes = () => {
     <div className="App">
       <Router>
         <NavHeader />
-
-        <Progressbar />
 
         <Switch>
           <Route exact path="/" component={Login} />

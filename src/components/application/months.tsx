@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
 import Button from '../common/Button'
-import Container from '../common/Container'
 import FormCard from '../form/FormContainer'
 import SelectField from '../form/SelectField'
+import Progressbar from '../navigation/Progressbar'
 
 const availMonths = [
   {value: 1, text: "1 mánuður"},
@@ -25,6 +25,7 @@ const availMonths = [
 
 export default function Months() {
   const history = useHistory()
+
   const initialValues = {
     months: 1,
   }
@@ -33,12 +34,12 @@ export default function Months() {
     initialValues,
     onSubmit: async (values) => {
       console.log(values)
-      history.push('/step2')
+      history.push('/step2', {animation: 'forward'})
     },
   })
 
   return (
-    <Container>
+    <Progressbar current="/step1">
       <form onSubmit={months.handleSubmit}>
         <FormCard>
           <Text variant="h3" className="pb-5 text-center">
@@ -61,6 +62,6 @@ export default function Months() {
           </Button>
         </div>
       </form>
-    </Container>
+    </Progressbar>
   )
 }

@@ -4,12 +4,13 @@ import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
 import Button from '../common/Button'
-import Container from '../common/Container'
 import FormCard from '../form/FormContainer'
+import Progressbar from '../navigation/Progressbar'
 
 
 export default function Calculation() {
   const history = useHistory()
+
   const initialValues = {
     months: 1,
   }
@@ -18,12 +19,12 @@ export default function Calculation() {
     initialValues,
     onSubmit: async (values) => {
       console.log(values)
-      history.push('/step3')
+      history.push('/step3', {animation: 'forward'})
     },
   })
 
   return (
-    <Container>
+    <Progressbar current="step2">
       <form onSubmit={calculation.handleSubmit}>
         <FormCard>
           <Text variant="h3" className="pb-5 text-center">
@@ -33,7 +34,14 @@ export default function Calculation() {
 
         </FormCard>
 
-        <div className="d-flex justify-content-end pt-4">
+        <div className="d-flex justify-content-between pt-4">
+          <Button
+            onClick={() => history.push('step1', {animation: 'backward'})}
+            variant="secondary"
+          >
+            Til baka
+          </Button>
+
           <Button
             type="submit"
           >
@@ -41,6 +49,6 @@ export default function Calculation() {
           </Button>
         </div>
       </form>
-    </Container>
+    </Progressbar>
   )
 }

@@ -34,6 +34,7 @@ export default function SelectField({
       >
         {options.map(option => (
           <option
+            key={option.value}
             value={option.value}
             className="select-field__option"
           >{option.text}</option>

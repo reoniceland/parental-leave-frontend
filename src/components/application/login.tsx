@@ -6,9 +6,9 @@ import { useHistory } from 'react-router-dom'
 
 import Text from '../common/Text'
 import Button from '../common/Button'
-import Container from '../common/Container'
 import InputField from '../form/InputField'
 import FormCard from '../form/FormContainer'
+import Progressbar from '../navigation/Progressbar'
 
 const PERSON = gql`
 query Person($kennitala: String!) {
@@ -31,13 +31,14 @@ export default function Login() {
     initialValues,
     onSubmit: async (values) => {
       await getPerson({ variables: { kennitala: values.kennitala }})
+
       console.log(data)
-      history.push('/step1')
+      history.push('/step1', {animation: 'forward'})
     },
   })
 
   return (
-    <Container>
+    <Progressbar current="/">
       <form onSubmit={login.handleSubmit}>
         <FormCard>
           <Text
@@ -67,6 +68,6 @@ export default function Login() {
           >Innskráning</Button>
         </FormCard>
       </form>
-    </Container>
+    </Progressbar>
   )
 }
